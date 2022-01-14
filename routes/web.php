@@ -17,8 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/product-catalogue', \App\Http\Controllers\ProductsCatalogueController::class)->middleware(['auth'])->name('product-catalogue');
 
 require __DIR__.'/auth.php';
