@@ -13,7 +13,12 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('product-catalogue')" :active="request()->routeIs('product-catalogue')">
-                        {{ __('Products') }}
+                        {{ __('Explore Products') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('product.create')" :active="request()->routeIs('product.create')">
+                        {{ __('Add a Product') }}
                     </x-nav-link>
                 </div>
             </div>
