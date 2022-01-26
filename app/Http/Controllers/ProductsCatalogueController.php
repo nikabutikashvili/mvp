@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class ProductsCatalogueController extends Controller
 {
@@ -15,7 +15,7 @@ class ProductsCatalogueController extends Controller
         });
 
         return view('product-catalogue', [
-            'products' => $products
+            'products' => $products,
         ]);
     }
 }
