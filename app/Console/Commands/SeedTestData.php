@@ -18,6 +18,7 @@ class SeedTestData extends Command
     public function handle()
     {
         \App\Models\Product::factory(40)->create();
+
         return 0;
     }
 }

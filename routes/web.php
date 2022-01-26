@@ -17,9 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/product-catalogue', \App\Http\Controllers\ProductsCatalogueController::class)->middleware(['auth'])->name( 'product-catalogue');
+Route::get('/product-catalogue', \App\Http\Controllers\ProductsCatalogueController::class)->middleware(['auth'])->name('product-catalogue');
 Route::get('/test', \App\Http\Controllers\Test::class);
-Route::resource('/product', \App\Http\Controllers\Product::class)->middleware(['auth'])->name("*", 'product');
+Route::resource('/product', \App\Http\Controllers\Product::class)->middleware(['auth'])->name('*', 'product');
 Route::post('/reviews', [\App\Http\Controllers\ReviewController::class, 'store'])->name('reviews');
 
 require __DIR__.'/auth.php';
