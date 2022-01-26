@@ -30,10 +30,11 @@ class Product extends Controller
         $product->save();
         $productId = $product->id;
 
-         if($request->file('image'))   {
-             $image = new ImageController();
-             $image->store($request->file('image'), $productId);
-         }
+        if ($request->file('image')) {
+            $image = new ImageController();
+            $image->store($request->file('image'), $productId);
+        }
+
         return Redirect::to('product-catalogue');
     }
 
