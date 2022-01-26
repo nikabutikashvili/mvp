@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateReviewsTable extends Migration
 {
-
     public function up()
     {
         Schema::create('reviews', function (Blueprint $table) {
@@ -17,7 +16,6 @@ class CreateReviewsTable extends Migration
             $table->timestamps();
         });
     }
-
 
     public function down()
     {

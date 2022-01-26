@@ -8,18 +8,15 @@ use Illuminate\Support\Facades\Redirect;
 
 class Product extends Controller
 {
-
     public function index()
     {
         //
     }
 
-
     public function create()
     {
         return view('product.create');
     }
-
 
     public function store(Request $request)
     {
@@ -34,26 +31,25 @@ class Product extends Controller
         return Redirect::to('product-catalogue');
     }
 
-
     public function show($id)
     {
         $product = \App\Models\Product::find($id);
         $reviews = Review::where('products_id', $id)->get();
+
         return view('product.show', [
             'product' => $product,
             'reviews' => $reviews,
         ]);
     }
 
-
     public function edit($id)
     {
         $product = \App\Models\Product::find($id);
-        return view('product.edit',  [
-            'product' => $product
+
+        return view('product.edit', [
+            'product' => $product,
         ]);
     }
-
 
     public function update(Request $request, $id)
     {
@@ -68,7 +64,6 @@ class Product extends Controller
 
         return Redirect::to('product-catalogue');
     }
-
 
     public function destroy($id)
     {
