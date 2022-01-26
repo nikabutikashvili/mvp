@@ -9,7 +9,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200 flex flex-col items-center">
                     <h1 class="text-xl mb-10">Add a Product</h1>
-                    <form method="POST" action="{{ route('product.store') }}" class="w-96">
+                    <form method="POST" action="{{ route('product.store') }}" enctype="multipart/form-data" class="w-96">
                         @csrf
                         <div class="mb-4">
                             <x-label for="name" :value="__('Name of the Product')" />

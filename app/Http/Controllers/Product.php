@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -27,7 +28,12 @@ class Product extends Controller
         $product->description = $inputs['description'];
         $product->price = $inputs['price'];
         $product->save();
+        $productId = $product->id;
 
+         if($request->file('image'))   {
+             $image = new ImageController();
+             $image->store($request->file('image'), $productId);
+         }
         return Redirect::to('product-catalogue');
     }
 
@@ -35,10 +41,12 @@ class Product extends Controller
     {
         $product = \App\Models\Product::find($id);
         $reviews = Review::where('products_id', $id)->get();
+        $image = Image::where('products_id', $id)->first();
 
         return view('product.show', [
             'product' => $product,
             'reviews' => $reviews,
+            'image'   => $image,
         ]);
     }
 
