@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -37,8 +38,10 @@ class Product extends Controller
     public function show($id)
     {
         $product = \App\Models\Product::find($id);
+        $reviews = Review::where('products_id', $id)->get();
         return view('product.show', [
-            'product' => $product
+            'product' => $product,
+            'reviews' => $reviews,
         ]);
     }
 

@@ -18,21 +18,22 @@
                                 <x-button class="ml-3">Add to Cart</x-button>
                                 <x-button onclick="location.href='{{$product->id}}/edit'" class="ml-3">Edit</x-button>
                         </div>
-
                     </div>
                 </div>
             </div>
-            <div class="mt-12 bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
+            <div class="mt-12 h-96 bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="h-full p-6 bg-white border-b border-gray-200">
                     <h2>Reviews</h2>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="pt-6">
+                    <div class="h-full grid grid-cols-2 gap-4 py-6">
+                        <form method="POST" action="{{ route('reviews') }}" class="flex flex-col justify-between">
+                            @csrf
                             <textarea class="
                             mb-6
                             resize-none
                             form-control
                             block
                             w-full
+                            h-full
                             px-3
                             py-1.5
                             text-base
@@ -44,15 +45,18 @@
                             transition
                             ease-in-out
                             m-0
-                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" name="review"
                             >
                             </textarea>
+                            <input name="product_id" value="{{$product->id}}" id="name" class="invisible" />
                             <div class="flex justify-end">
-                                <x-button class="ml-3">Add a review</x-button>
+                                <x-button type="submit" class="ml-3">Add a review</x-button>
                             </div>
-                        </div>
-                        <div>
-                            Some other reviews
+                        </form>
+                        <div class="overflow-auto">
+                            @foreach($reviews as $review)
+                                <span class="block border-2 rounded mb-6 p-4">{{$review->review}}</span>
+                            @endforeach
                         </div>
                     </div>
                 </div>

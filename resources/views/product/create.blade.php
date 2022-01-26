@@ -23,6 +23,11 @@
                             <x-label for="price" :value="__('Price')" />
                             <x-input id="price" class="block mt-1 w-full" type="text" name="price" :value="old('name')" required autofocus />
                         </div>
+                        <div class="mb-4">
+                            <span />
+                            <x-label for="image" :value="__('Image')" />
+                            <x-input id="image" class="block mt-1 w-full cursor-pointer" type="file" name="image" :value="old('name')" required autofocus />
+                        </div>
                         <div class="flex justify-end mt-8">
                             <x-button type="submit">Create</x-button>
                         </div>
