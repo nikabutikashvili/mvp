@@ -22,6 +22,15 @@
                     @endforeach
                 </div>
             </div>
+            <form method="post" action="/newsletter" class="p-6 mt-10 bg-white border-b border-gray-200 flex flex-col items-center justify-center">
+                @csrf
+                <h2 class="font-bold">Subscribe for our newsletter. Never miss a new product</h2>
+                <div class="mt-4">
+                    <x-input id="email" class="block mt-1 w-96" type="email" name="email" placeholder="Your email address" required />
+                </div>
+                <x-button class="mt-4">Subscribe</x-button>
+            </form>
         </div>
     </div>
+
 </x-app-layout>

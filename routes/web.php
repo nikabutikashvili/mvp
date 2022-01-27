@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\NewsletterController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +25,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/reviews', [\App\Http\Controllers\ReviewController::class, 'store'])->name('reviews');
 });
 
+Route::post('newsletter', NewsletterController::class);
 
 Route::get('/test', \App\Http\Controllers\Test::class);
 
