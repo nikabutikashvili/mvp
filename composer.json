@@ -13,6 +13,7 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "mailchimp/marketing": "^3.0",
+        "spatie/laravel-backup": "^7.0",
         "wildbit/swiftmailer-postmark": "^3.3"
     },
     "require-dev": {
