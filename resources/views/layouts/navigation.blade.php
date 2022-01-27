@@ -5,19 +5,19 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a class="block w-24" href="{{ route('product-catalogue') }}">
+                    <a class="block w-24" href="{{ route('products') }}">
                         <x-application-logo class="block w-full h-10 fill-current text-gray-600" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('product-catalogue')" :active="request()->routeIs('product-catalogue')">
+                    <x-nav-link :href="route('products')" :active="request()->routeIs('products')">
                         {{ __('Explore Products') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('product.create')" :active="request()->routeIs('product.create')">
+                    <x-nav-link :href="route('create-product')" :active="request()->routeIs('create-product')">
                         {{ __('Add a Product') }}
                     </x-nav-link>
                 </div>
@@ -68,7 +68,7 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('product-catalogue')" :active="request()->routeIs('product-catalogue')">
+            <x-responsive-nav-link :href="route('products')" :active="request()->routeIs('products')">
                 {{ __('Products') }}
             </x-responsive-nav-link>
         </div>

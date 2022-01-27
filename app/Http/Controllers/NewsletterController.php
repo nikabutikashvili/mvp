@@ -13,11 +13,11 @@ class NewsletterController extends Controller
         try {
             $newsletter->subscribe(request('email'));
         } catch (\Exception $e) {
-            return redirect('/product-catalogue')
+            return redirect('/products')
                     ->with('error', 'This email could not be added to our newsletter list');
         }
 
-        return redirect('/product-catalogue')
+        return redirect('/products')
                 ->with('success', 'You are now signed up for our newsletter');
     }
 }

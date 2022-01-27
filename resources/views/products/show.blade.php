@@ -22,7 +22,9 @@
                         <div>
                                 <x-button class="ml-3">Give it a like</x-button>
                                 <x-button class="ml-3">Add to Cart</x-button>
-                                <x-button onclick="location.href='{{$product->id}}/edit'" class="ml-3">Edit</x-button>
+                                <a href="{{route('edit-product', $product->id)}}">
+                                    <x-button  class="ml-3">Edit</x-button>
+                                </a>
                         </div>
                     </div>
                 </div>

@@ -16,7 +16,7 @@
                            </div>
                            <div class="flex justify-between items-center">
                                <span class="font-bold">${{$product->price}}</span>
-                                   <x-button onclick="location.href='product/{{$product->id}}'" class="ml-3">See Details</x-button>
+                                   <x-button onclick="location.href='products/{{$product->id}}'" class="ml-3">See Details</x-button>
                            </div>
                        </div>
                     @endforeach
@@ -30,6 +30,7 @@
                 </div>
                 <x-button class="mt-4">Subscribe</x-button>
             </form>
+
         </div>
     </div>
 

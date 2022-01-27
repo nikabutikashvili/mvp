@@ -19,6 +19,6 @@ class ReviewController extends Controller
         $review->users_id = $user->id;
         $review->save();
 
-        return Redirect::to('product/'.$inputs['product_id']);
+        return Redirect::to('products/'.$inputs['product_id']);
     }
 }
