@@ -49,12 +49,9 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::find($id);
-        $reviews = Review::where('products_id', $id)->get();
         $image = Image::where('products_id', $id)->first();
-
         return view('products.show', [
             'product' => $product,
-            'reviews' => $reviews,
             'image'   => $image,
         ]);
     }

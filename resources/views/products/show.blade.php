@@ -62,7 +62,7 @@
                             </div>
                         </form>
                         <div class="overflow-auto">
-                            @foreach($reviews as $review)
+                            @foreach($product->reviews as $review)
                                 <span class="block border-2 rounded mb-6 p-4">{{$review->review}}</span>
                             @endforeach
                         </div>
