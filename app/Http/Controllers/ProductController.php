@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Image;
 use App\Models\Product;
-use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Redirect;
@@ -50,6 +49,7 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         $image = Image::where('products_id', $id)->first();
+
         return view('products.show', [
             'product' => $product,
             'image'   => $image,
