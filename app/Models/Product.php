@@ -9,7 +9,8 @@ class Product extends Model
 {
     use HasFactory;
 
-    public function reviews() {
+    public function reviews()
+    {
         return $this->hasMany(Review::class, 'products_id');
     }
 }
