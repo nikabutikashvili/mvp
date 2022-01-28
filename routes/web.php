@@ -21,6 +21,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('admin/products/store', [ProductController::class, 'store'])->name('store-product');
     Route::get('admin/products/{id}/edit', [ProductController::class, 'edit'])->name('edit-product');
     Route::put('admin/products/{id}/update', [ProductController::class, 'update'])->name('update-product');
+    Route::delete('admin/products/{id}/delete', [ProductController::class, 'destroy'])->name('delete-product');
 });
 
 Route::post('newsletter', NewsletterController::class);

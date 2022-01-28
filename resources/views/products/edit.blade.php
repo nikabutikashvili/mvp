@@ -29,6 +29,11 @@
                             <x-button type="submit">Update</x-button>
                         </div>
                     </form>
+                    <form method="POST" action="{{ route('delete-product', $product->id) }}" class="w-96">
+                        @csrf
+                        @method('DELETE')
+                        <x-button type="submit">Delete this product</x-button>
+                    </form>
                 </div>
             </div>
         </div>
